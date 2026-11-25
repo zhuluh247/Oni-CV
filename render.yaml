@@ -1,0 +1,23 @@
+# Render Blueprint for Oni Abiodun Ebenezer — Portfolio
+# https://render.com/docs/blueprint-spec
+# After pushing this repo to GitHub, go to:
+#   New → Blueprint → pick this repository
+# Render will read this file and create the service for you.
+
+services:
+  - type: web
+    name: oni-abiodun-ebenezer-portfolio
+    runtime: node
+    plan: free
+    region: oregon
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    healthCheckPath: /
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: 20.11.1
+      - key: NEXT_TELEMETRY_DISABLED
+        value: "1"
+      - key: NODE_ENV
+        value: production
